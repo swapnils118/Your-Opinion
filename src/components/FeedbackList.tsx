@@ -27,11 +27,13 @@ const feedbackItems = [
 export default function FeedbackList() {
   return (
     <ol className="feedback-list">
-      {/* <FeedbackItem feedbackItem={feedbackItem} /> */}
-
-      {feedbackItems.map((feedbackItem) => {
+      {/* {feedbackItems.map((feedbackItem) => {
         return <FeedbackItem feedbackItem={feedbackItem} />;
-      })}
+      })} */}
+
+      {feedbackItems.map((feedbackItem) => (
+        <FeedbackItem feedbackItem={feedbackItem} />
+      ))}
     </ol>
   );
 }
