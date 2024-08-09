@@ -1,7 +1,16 @@
-export default function HashtagList() {
+export default function HashtagList({ companyList }) {
   return (
     <ul className="hashtags">
-      <li>
+      {companyList.map((company) => {
+        return (
+          <li>
+            <button>#{company}</button>
+          </li>
+        );
+      })}
+
+      {/* Hard coding the hashtag list value */}
+      {/* <li>
         <button>#swapnil</button>
       </li>
       <li>
@@ -9,7 +18,7 @@ export default function HashtagList() {
       </li>
       <li>
         <button>#tyson</button>
-      </li>
+      </li> */}
     </ul>
   );
 }

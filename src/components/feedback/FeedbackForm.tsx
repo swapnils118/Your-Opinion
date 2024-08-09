@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MAX_CHARACTERS } from "../lib/constants";
+import { MAX_CHARACTERS } from "../../lib/constants";
 
 type FeedbackFormProps = {
   onAddToList: (text: string) => void;
@@ -31,7 +31,7 @@ export default function FeedbackForm({ onAddToList }: FeedbackFormProps) {
         value={text}
         onChange={handleChange}
         id="feedback-textarea"
-        placeholder="adv"
+        placeholder="any"
         spellCheck={false}
       />
       <label htmlFor="feedback-textarea">

@@ -305,7 +305,7 @@ form button span::selection {
   height: 573px;
   overflow-y: scroll;
   overflow-x: hidden;
-  /* background-color: #F3F6F8; */
+  /* background-color: #f3f6f8; */
   background-color: #f7f8f9;
 
   scrollbar-color: #979ca0 #dbdfe4; /* Firefox */
