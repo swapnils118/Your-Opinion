@@ -1,6 +1,6 @@
+import { useState } from "react";
 import { TriangleUpIcon } from "@radix-ui/react-icons";
 import { TFeedbackItem } from "../../lib/types";
-import { useState } from "react";
 
 // MOVED TO ITS OWN FILE: types
 // type FeedbackItem = {
@@ -11,7 +11,9 @@ import { useState } from "react";
 //   daysAgo: number;
 // };
 
-type FeedbackItemProps = { feedbackItem: TFeedbackItem };
+type FeedbackItemProps = {
+  feedbackItem: TFeedbackItem;
+};
 
 export default function FeedbackItem({ feedbackItem }: FeedbackItemProps) {
   const [open, setOpen] = useState(false);
@@ -42,8 +44,7 @@ export default function FeedbackItem({ feedbackItem }: FeedbackItemProps) {
         <p>{feedbackItem.text}</p>
       </div>
 
-      {/* <p>{feedbackItem.daysAgo}d</p> */}
-      <p>{feedbackItem.daysAgo === 0 ? "New" : `${feedbackItem.daysAgo}d`}</p>
+      <p>{feedbackItem.daysAgo === 0 ? "NEW" : `${feedbackItem.daysAgo}d`}</p>
     </li>
   );
 }

@@ -9,7 +9,6 @@ export default function FeedbackForm({ onAddToList }: FeedbackFormProps) {
   const [text, setText] = useState("");
   const [showValidIndicator, setShowValidIndicator] = useState(false);
   const [showInvalidIndicator, setShowInvalidIndicator] = useState(false);
-
   const charCount = MAX_CHARACTERS - text.length;
 
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -17,19 +16,20 @@ export default function FeedbackForm({ onAddToList }: FeedbackFormProps) {
     if (newText.length > MAX_CHARACTERS) {
       return;
     }
-
-    setText(event.target.value);
+    setText(newText);
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Validation
+
+    // basic validation
     if (text.includes("#") && text.length >= 5) {
       setShowValidIndicator(true);
       setTimeout(() => setShowValidIndicator(false), 2000);
     } else {
       setShowInvalidIndicator(true);
       setTimeout(() => setShowInvalidIndicator(false), 2000);
+      return;
     }
 
     onAddToList(text);
@@ -47,12 +47,14 @@ export default function FeedbackForm({ onAddToList }: FeedbackFormProps) {
         value={text}
         onChange={handleChange}
         id="feedback-textarea"
-        placeholder="any"
+        placeholder="blabla"
         spellCheck={false}
       />
+
       <label htmlFor="feedback-textarea">
         Enter your feedback here, remember to #hashtag the company
       </label>
+
       <div>
         <p className="u-italic">{charCount}</p>
         <button>

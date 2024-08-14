@@ -1,24 +1,19 @@
-// type HashtagListProps = {
-//   companyList: string[];
-//   handleSelectCompany: (company: string) => void;
-// };
-type HashtagListProps = { children: React.ReactNode };
+import { useFeedbackItemsStore } from "../../stores/feedbackItemsStore";
+import HashtagItem from "./HashtagItem";
 
-export default function HashtagList({ children }: HashtagListProps) {
+export default function HashtagList() {
+  const companyList = useFeedbackItemsStore((state) => state.getCompanyList());
+  const selectCompany = useFeedbackItemsStore((state) => state.selectCompany);
+
   return (
     <ul className="hashtags">
-      {children}
-
-      {/* Hard coding the hashtag list value */}
-      {/* <li>
-        <button>#swapnil</button>
-      </li>
-      <li>
-        <button>#sameep</button>
-      </li>
-      <li>
-        <button>#tyson</button>
-      </li> */}
+      {companyList.map((company) => (
+        <HashtagItem
+          key={company}
+          company={company}
+          onSelectCompany={selectCompany}
+        />
+      ))}
     </ul>
   );
 }

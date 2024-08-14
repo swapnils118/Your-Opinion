@@ -4,8 +4,8 @@ type HashtagItemProps = {
 };
 
 export default function HashtagItem({
-  company,
   onSelectCompany,
+  company,
 }: HashtagItemProps) {
   return (
     <li key={company}>
