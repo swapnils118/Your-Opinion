@@ -1,4 +1,4 @@
-import { useFeedbackItemsStore } from "../../stores/feedbackItemsStore";
+import { useFeedbackItemsStore } from "../../stores/FeedbackItemsStore";
 import FeedbackForm from "../feedback/FeedbackForm";
 import Logo from "../Logo";
 import PageHeading from "../PageHeading";

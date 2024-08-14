@@ -1,8 +1,7 @@
 import FeedbackItem from "./FeedbackItem";
 import Spinner from "../Spinner";
 import ErrorMessage from "../ErrorMessage";
-import { useFeedbackItemsStore } from "../../stores/feedbackItemsStore";
-// import { useFeedbackItemsStore } from "../../stores/feedbackItemsStore";
+import { useFeedbackItemsStore } from "../../stores/FeedbackItemsStore";
 
 // const exampleFeedbackItems = [
 //   {
